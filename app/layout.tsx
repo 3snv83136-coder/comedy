@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="fr">
       <body className="bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
-          <header className="border-b border-zinc-800 bg-black/60 backdrop-blur">
+          <header className="border-b border-slate-800/60 bg-slate-900/70 backdrop-blur">
             <div className="container flex items-center justify-between py-4">
               <Link href="/" className="flex items-center gap-3">
                 <div className="relative h-10 w-28 md:w-32">
@@ -47,6 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
               <nav className="hidden md:flex items-center gap-6 text-sm">
                 <Link href="/programmation">Programmation</Link>
+                <Link href="/#artistes">Nos artistes</Link>
                 <a href="mailto:contact@biiip-comedy.club">Contact</a>
               </nav>
               <a

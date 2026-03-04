@@ -13,8 +13,8 @@ export default function HomePage() {
   const upcoming = shows;
 
   return (
-    <div className="bg-gradient-to-b from-black via-background to-black">
-      <section className="border-b border-zinc-800">
+    <div className="bg-gradient-to-b from-slate-900 via-background to-slate-900">
+      <section className="border-b border-slate-800/60">
         <div className="container py-16 md:py-24 grid gap-10 md:grid-cols-[3fr,2fr] items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary-500 mb-4">
@@ -24,8 +24,8 @@ export default function HomePage() {
               Biiip Comedy Club
             </h1>
             <p className="text-lg text-muted mb-6 max-w-xl">
-              Plateaux d&apos;humour, open mics et soirées spéciales dans une
-              ambiance club intimiste.
+              Des blagues, des bides (parfois), des surprises (souvent) et une
+              salle qui rit fort même le lundi soir.
             </p>
             <div className="flex flex-wrap gap-4 items-center mb-6">
               <Link href="/programmation" className="btn-primary">
@@ -37,7 +37,7 @@ export default function HomePage() {
             </div>
             <p className="text-sm text-muted">
               <span className="font-medium text-foreground">Où ? </span>
-              Salle Biiip · Paris (adresse à préciser)
+              Biiip Comedy Club · 1 rue de l&apos;humilité · 83000 Toulon
             </p>
           </div>
           <div className="relative h-64 md:h-80">
@@ -98,7 +98,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container py-12 md:py-16">
+      <section className="container py-12 md:py-16" id="artistes">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
             <p className="badge mb-3">Ambiance club</p>
@@ -109,19 +109,20 @@ export default function HomePage() {
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
-            <p className="badge mb-3">Programmation</p>
-            <h3 className="font-semibold mb-2">Plateaux & open mics</h3>
+            <p className="badge mb-3">Nos artistes</p>
+            <h3 className="font-semibold mb-2">Une troupe bien détraquée</h3>
             <p className="text-sm text-muted">
-              Des soirées régulières pour découvrir la nouvelle scène stand-up
-              et venir jouer si vous êtes humoriste.
+              Entre punchlines absurdes, histoires gênantes et improvisations
+              foireuses, les humoristes maison adorent tester de nouveaux
+              passages devant vous.
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
             <p className="badge mb-3">Association</p>
-            <h3 className="font-semibold mb-2">Projet bénévole</h3>
+            <h3 className="font-semibold mb-2">Projet très sérieux (ou pas)</h3>
             <p className="text-sm text-muted">
-              Une association loi 1901 qui soutient la création humoristique et
-              l&apos;émergence de nouveaux talents.
+              On prend l&apos;orga au sérieux, mais jamais nous-mêmes. La seule
+              chose vraiment obligatoire : rire (ou au moins sourire poli).
             </p>
           </div>
         </div>
@@ -154,40 +155,22 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="border-t border-zinc-800 bg-black/60">
+      <section className="border-t border-slate-800/60 bg-slate-900/70">
         <div className="container py-10 md:py-12 grid gap-8 md:grid-cols-[2fr,1fr] items-center">
           <div>
             <h2 className="text-xl font-semibold mb-2">
-              Newsletter (optionnelle)
+              Restons en contact
             </h2>
             <p className="text-sm text-muted mb-3 max-w-xl">
-              Recevez, si vous le souhaitez, les infos sur les prochaines
-              soirées stand-up du Biiip Comedy Club.
+              Une question, une idée de plateau, une envie de privatiser le
+              club ou juste nous dire que votre pote devrait monter sur scène ?
             </p>
-            <p className="text-[11px] text-amber-400 mb-3">
-              Le double opt-in (confirmation par email) est recommandé pour un
-              usage réel mais n&apos;est pas implémenté dans ce template.
-            </p>
-            <form
-              className="flex flex-col sm:flex-row gap-3 max-w-md"
-              method="post"
-              action="/newsletter/subscribe"
+            <a
+              href="mailto:contact@biiip-comedy.club"
+              className="btn-primary text-sm"
             >
-              <label className="sr-only" htmlFor="newsletter-email">
-                Email
-              </label>
-              <input
-                id="newsletter-email"
-                name="email"
-                type="email"
-                required
-                placeholder="votre@email"
-                className="flex-1 rounded-full bg-black/40 border border-zinc-700 px-4 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
-              />
-              <button type="submit" className="btn-primary text-sm">
-                S&apos;inscrire
-              </button>
-            </form>
+              Écrire à Biiip Comedy Club
+            </a>
           </div>
         </div>
       </section>

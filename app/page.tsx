@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import Image from "next/image";
-
-export const dynamic = "force-dynamic";
+import { shows } from "@/data/shows";
 
 export const metadata: Metadata = {
   title: "Soirées stand-up et plateaux d'humour",
@@ -11,20 +9,8 @@ export const metadata: Metadata = {
     "Découvrez la programmation stand-up de Biiip Comedy Club : artistes émergents, plateaux, open mics et soirées spéciales."
 };
 
-async function getHomeData() {
-  const [settings, events] = await Promise.all([
-    prisma.siteSettings.findFirst(),
-    prisma.event.findMany({
-      where: { status: "PUBLISHED", startDate: { gte: new Date() } },
-      orderBy: { startDate: "asc" },
-      take: 4
-    })
-  ]);
-  return { settings, events };
-}
-
-export default async function HomePage() {
-  const { settings, events } = await getHomeData();
+export default function HomePage() {
+  const upcoming = shows;
 
   return (
     <div className="bg-gradient-to-b from-black via-background to-black">
@@ -38,23 +24,21 @@ export default async function HomePage() {
               Biiip Comedy Club
             </h1>
             <p className="text-lg text-muted mb-6 max-w-xl">
-              {settings?.heroText ??
-                "Plateaux d'humour, open mics et soirées spéciales dans une ambiance club intimiste."}
+              Plateaux d&apos;humour, open mics et soirées spéciales dans une
+              ambiance club intimiste.
             </p>
             <div className="flex flex-wrap gap-4 items-center mb-6">
               <Link href="/programmation" className="btn-primary">
                 Voir la programmation
               </Link>
-              <Link href="/demande-de-passage" className="btn-outline">
+              <a href="mailto:contact@biiip-comedy.club" className="btn-outline">
                 Demander un passage
-              </Link>
+              </a>
             </div>
-            {settings?.address && (
-              <p className="text-sm text-muted">
-                <span className="font-medium text-foreground">Où ? </span>
-                {settings.address}
-              </p>
-            )}
+            <p className="text-sm text-muted">
+              <span className="font-medium text-foreground">Où ? </span>
+              Salle Biiip · Paris (adresse à préciser)
+            </p>
           </div>
           <div className="relative h-64 md:h-80">
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-500 via-black to-neonBlue opacity-60 blur-3xl" />
@@ -65,41 +49,40 @@ export default async function HomePage() {
                   Prochains plateaux
                 </h2>
                 <div className="space-y-3 text-sm">
-                  {events.length === 0 && (
+                  {upcoming.length === 0 && (
                     <p className="text-muted">
                       La prochaine programmation arrive bientôt. Suivez-nous sur
                       les réseaux !
                     </p>
                   )}
-                  {events.map((event) => (
+                  {upcoming.map((event) => (
                     <div
-                      key={event.id}
+                      key={`${event.title}-${event.date}`}
                       className="flex items-start justify-between gap-3"
                     >
                       <div>
                         <p className="font-medium">{event.title}</p>
                         <p className="text-xs text-muted">
-                          {new Date(event.startDate).toLocaleDateString(
-                            "fr-FR",
-                            {
-                              weekday: "short",
-                              day: "2-digit",
-                              month: "short",
-                              hour: "2-digit",
-                              minute: "2-digit"
-                            }
-                          )}{" "}
-                          · {event.venueName}
+                          {new Date(event.date).toLocaleDateString("fr-FR", {
+                            weekday: "short",
+                            day: "2-digit",
+                            month: "short",
+                            hour: "2-digit",
+                            minute: "2-digit"
+                          })}{" "}
+                          · {event.venue}
                         </p>
                       </div>
-                      <a
-                        href={event.bookingUrl}
-                        className="text-xs rounded-full border border-primary-500 px-3 py-1 hover:bg-primary-500 hover:text-white"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Réserver
-                      </a>
+                      {event.bookingUrl && (
+                        <a
+                          href={event.bookingUrl}
+                          className="text-xs rounded-full border border-primary-500 px-3 py-1 hover:bg-primary-500 hover:text-white"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Réserver
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -165,9 +148,9 @@ export default async function HomePage() {
               confirmé·es. Envoyez-nous une demande de passage avec quelques
               infos sur votre expérience et un lien vidéo si possible.
             </p>
-            <Link href="/demande-de-passage" className="btn-primary">
+            <a href="mailto:contact@biiip-comedy.club" className="btn-primary">
               Faire une demande de passage
-            </Link>
+            </a>
           </div>
         </div>
       </section>

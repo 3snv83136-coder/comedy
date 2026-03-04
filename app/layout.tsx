@@ -47,30 +47,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
               <nav className="hidden md:flex items-center gap-6 text-sm">
                 <Link href="/programmation">Programmation</Link>
-                <Link href="/artistes">Artistes</Link>
-                <Link href="/le-club">Le Club</Link>
-                <Link href="/demande-de-passage">Demande de passage</Link>
-                <Link href="/faq">FAQ</Link>
-                <Link href="/contact">Contact</Link>
+                <a href="mailto:contact@biiip-comedy.club">Contact</a>
               </nav>
-              <Link
-                href="/admin"
-                className="text-xs font-medium text-muted hover:text-primary-500"
+              <a
+                href="mailto:contact@biiip-comedy.club"
+                className="btn-outline text-xs"
               >
-                Back-office
-              </Link>
+                Écrire au club
+              </a>
             </div>
           </header>
           <main className="flex-1">{children}</main>
           <footer className="border-t border-zinc-800 bg-black/80 mt-10">
             <div className="container py-8 text-sm text-muted flex flex-col md:flex-row items-center justify-between gap-4">
               <p>© {new Date().getFullYear()} Biiip Comedy Club. Tous droits réservés.</p>
-              <div className="flex gap-4">
-                <Link href="/mentions-legales">Mentions légales</Link>
-                <Link href="/politique-de-confidentialite">
-                  Politique de confidentialité
-                </Link>
-              </div>
+              <p>
+                Contact :{" "}
+                <a href="mailto:contact@biiip-comedy.club">
+                  contact@biiip-comedy.club
+                </a>
+              </p>
             </div>
           </footer>
         </div>

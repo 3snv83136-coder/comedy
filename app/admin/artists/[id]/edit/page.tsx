@@ -11,7 +11,7 @@ async function updateArtist(id: string, formData: FormData) {
   const session = await auth();
   if (!session) redirect("/admin/login");
 
-  const tags = String(formData.get("tags") || "")
+  const tagsArray = String(formData.get("tags") || "")
     .split(",")
     .map((t) => t.trim())
     .filter(Boolean);
@@ -25,7 +25,7 @@ async function updateArtist(id: string, formData: FormData) {
     youtube: String(formData.get("youtube") || ""),
     website: String(formData.get("website") || ""),
     videoEmbedUrl: String(formData.get("videoEmbedUrl") || ""),
-    tags
+    tags: tagsArray
   };
 
   const parsed = artistSchema.safeParse(data);
@@ -44,7 +44,7 @@ async function updateArtist(id: string, formData: FormData) {
       youtube: parsed.data.youtube || null,
       website: parsed.data.website || null,
       videoEmbedUrl: parsed.data.videoEmbedUrl || null,
-      tags
+      tags: tagsArray.join(",")
     }
   });
 
@@ -183,7 +183,7 @@ export default async function EditArtistPage({ params }: Props) {
           <input
             id="tags"
             name="tags"
-            defaultValue={artist.tags.join(", ")}
+            defaultValue={artist.tags || ""}
             className="w-full rounded-md bg-black/40 border border-zinc-700 px-3 py-2 text-sm"
           />
         </div>

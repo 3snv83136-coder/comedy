@@ -19,8 +19,6 @@
     "incremental": true,
     "types": [
       "next",
-      "next/auth",
-      "next/image-types",
       "node"
     ],
     "baseUrl": ".",

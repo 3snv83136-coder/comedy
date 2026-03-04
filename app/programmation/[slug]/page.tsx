@@ -44,8 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: event.title,
       description: event.description.slice(0, 150),
-      url: `${baseUrl}/programmation/${event.slug}`,
-      type: "event"
+      url: `${baseUrl}/programmation/${event.slug}`
     },
     other: {
       "script:type=application/ld+json": JSON.stringify(eventJsonLd)
@@ -88,14 +87,14 @@ export default async function EventPage({ params }: Props) {
       <p className="text-sm text-muted whitespace-pre-line mb-6">
         {event.description}
       </p>
-      <Link
+      <a
         href={event.bookingUrl}
         className="btn-primary text-sm"
         target="_blank"
         rel="noreferrer"
       >
         Réserver vos places
-      </Link>
+      </a>
       <p className="text-[11px] text-muted mt-2">
         Vous serez redirigé vers une plate-forme externe de billetterie pour
         finaliser votre réservation.

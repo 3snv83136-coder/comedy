@@ -18,8 +18,8 @@ async function getArtists(search?: string) {
     where: search
       ? {
           OR: [
-            { name: { contains: search, mode: "insensitive" } },
-            { bioShort: { contains: search, mode: "insensitive" } }
+            { name: { contains: search } },
+            { bioShort: { contains: search } }
           ]
         }
       : {},

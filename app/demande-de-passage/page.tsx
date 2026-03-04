@@ -126,12 +126,12 @@ export default function DemandeDePassagePage() {
               Si vous préférez, vous pouvez télécharger un modèle de dossier de
               candidature à remplir.
             </p>
-            <Link
+            <a
               href="/docs/dossier-candidature.pdf"
               className="btn-outline text-xs"
             >
               Télécharger le modèle PDF
-            </Link>
+            </a>
           </div>
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-4">
             <h2 className="font-semibold mb-2 text-sm">

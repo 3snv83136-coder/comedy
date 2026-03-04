@@ -10,7 +10,7 @@ async function createArtist(formData: FormData) {
   const session = await auth();
   if (!session) redirect("/admin/login");
 
-  const tags = String(formData.get("tags") || "")
+  const tagsArray = String(formData.get("tags") || "")
     .split(",")
     .map((t) => t.trim())
     .filter(Boolean);
@@ -24,7 +24,7 @@ async function createArtist(formData: FormData) {
     youtube: String(formData.get("youtube") || ""),
     website: String(formData.get("website") || ""),
     videoEmbedUrl: String(formData.get("videoEmbedUrl") || ""),
-    tags
+    tags: tagsArray
   };
 
   const parsed = artistSchema.safeParse(data);
@@ -52,7 +52,7 @@ async function createArtist(formData: FormData) {
       youtube: parsed.data.youtube || null,
       website: parsed.data.website || null,
       videoEmbedUrl: parsed.data.videoEmbedUrl || null,
-      tags,
+      tags: tagsArray.join(","),
       slug
     }
   });

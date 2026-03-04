@@ -92,12 +92,14 @@ export default async function HomePage() {
                           · {event.venueName}
                         </p>
                       </div>
-                      <Link
+                      <a
                         href={event.bookingUrl}
                         className="text-xs rounded-full border border-primary-500 px-3 py-1 hover:bg-primary-500 hover:text-white"
+                        target="_blank"
+                        rel="noreferrer"
                       >
                         Réserver
-                      </Link>
+                      </a>
                     </div>
                   ))}
                 </div>

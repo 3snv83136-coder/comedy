@@ -18,8 +18,8 @@ async function getEvents(search?: string) {
     where: search
       ? {
           OR: [
-            { title: { contains: search, mode: "insensitive" } },
-            { venueName: { contains: search, mode: "insensitive" } }
+            { title: { contains: search } },
+            { venueName: { contains: search } }
           ]
         }
       : {},

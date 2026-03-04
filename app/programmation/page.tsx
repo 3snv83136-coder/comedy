@@ -137,13 +137,14 @@ export default async function ProgrammationPage({
                 </p>
               </div>
               <div className="flex flex-col items-end gap-2">
-                <Link
+                <a
                   href={event.bookingUrl}
                   className="btn-primary text-xs"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Réserver
-                </Link>
+                </a>
                 <p className="text-[10px] text-muted max-w-[180px] text-right">
                   La billetterie s&apos;ouvre dans un nouvel onglet. Vous
                   quittez le site de l&apos;association.

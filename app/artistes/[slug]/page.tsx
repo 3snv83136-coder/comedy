@@ -117,18 +117,22 @@ export default async function ArtistPage({ params }: Props) {
             </div>
           </div>
         )}
-        {artist.tags?.length > 0 && (
+        {artist.tags && artist.tags.split(",").filter(Boolean).length > 0 && (
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-3">
             <h2 className="font-semibold mb-2 text-sm">Styles</h2>
             <div className="flex flex-wrap gap-1">
-              {artist.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-zinc-900 px-2 py-0.5 text-[11px] text-muted"
-                >
-                  {tag}
-                </span>
-              ))}
+              {artist.tags
+                .split(",")
+                .map((tag) => tag.trim())
+                .filter(Boolean)
+                .map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-zinc-900 px-2 py-0.5 text-[11px] text-muted"
+                  >
+                    {tag}
+                  </span>
+                ))}
             </div>
           </div>
         )}

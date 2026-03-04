@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="fr">
       <body className="bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
-          <header className="border-b border-slate-800/60 bg-slate-900/70 backdrop-blur">
+          <header className="border-b border-zinc-300 bg-white/80 backdrop-blur">
             <div className="container flex items-center justify-between py-4">
               <Link href="/" className="flex items-center gap-3">
                 <div className="relative h-10 w-28 md:w-32">
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
               <nav className="hidden md:flex items-center gap-6 text-sm">
                 <Link href="/programmation">Programmation</Link>
-                <Link href="/#artistes">Nos artistes</Link>
+                <Link href="/#nos-artistes">Nos artistes</Link>
                 <a href="mailto:contact@biiip-comedy.club">Contact</a>
               </nav>
               <a
@@ -59,11 +59,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </header>
           <main className="flex-1">{children}</main>
-          <footer className="border-t border-zinc-800 bg-black/80 mt-10">
+          <footer className="border-t border-zinc-200 bg-white mt-10">
             <div className="container py-8 text-sm text-muted flex flex-col md:flex-row items-center justify-between gap-4">
               <p>© {new Date().getFullYear()} Biiip Comedy Club. Tous droits réservés.</p>
               <p>
-                Contact :{" "}
+                Biiip Comedy Club · 1 rue de l&apos;Humilité · 83000 Toulon ·{" "}
                 <a href="mailto:contact@biiip-comedy.club">
                   contact@biiip-comedy.club
                 </a>

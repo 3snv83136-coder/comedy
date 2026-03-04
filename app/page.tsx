@@ -13,8 +13,8 @@ export default function HomePage() {
   const upcoming = shows;
 
   return (
-    <div className="bg-gradient-to-b from-slate-900 via-background to-slate-900">
-      <section className="border-b border-slate-800/60">
+    <div className="bg-gradient-to-b from-white via-background to-[#0f172a]">
+      <section className="border-b border-zinc-800">
         <div className="container py-16 md:py-24 grid gap-10 md:grid-cols-[3fr,2fr] items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary-500 mb-4">
@@ -24,8 +24,8 @@ export default function HomePage() {
               Biiip Comedy Club
             </h1>
             <p className="text-lg text-muted mb-6 max-w-xl">
-              Des blagues, des bides (parfois), des surprises (souvent) et une
-              salle qui rit fort même le lundi soir.
+              Des blagues parfois fines, parfois très nulles, mais toujours avec
+              beaucoup d&apos;amour et un micro qui marche (normalement).
             </p>
             <div className="flex flex-wrap gap-4 items-center mb-6">
               <Link href="/programmation" className="btn-primary">
@@ -37,7 +37,7 @@ export default function HomePage() {
             </div>
             <p className="text-sm text-muted">
               <span className="font-medium text-foreground">Où ? </span>
-              Biiip Comedy Club · 1 rue de l&apos;humilité · 83000 Toulon
+              Biiip Comedy Club · 1 rue de l&apos;Humilité · 83000 Toulon
             </p>
           </div>
           <div className="relative h-64 md:h-80">
@@ -98,7 +98,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container py-12 md:py-16" id="artistes">
+      <section className="container py-12 md:py-16" id="nos-artistes">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
             <p className="badge mb-3">Ambiance club</p>
@@ -110,25 +110,24 @@ export default function HomePage() {
           </div>
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
             <p className="badge mb-3">Nos artistes</p>
-            <h3 className="font-semibold mb-2">Une troupe bien détraquée</h3>
+            <h3 className="font-semibold mb-2">Plateau de personnalités</h3>
             <p className="text-sm text-muted">
-              Entre punchlines absurdes, histoires gênantes et improvisations
-              foireuses, les humoristes maison adorent tester de nouveaux
-              passages devant vous.
+              Des têtes connues, des belles surprises et parfois un voisin qui
+              s&apos;est trompé de salle mais qui finit sur scène.
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-800 bg-card/70 p-6">
             <p className="badge mb-3">Association</p>
-            <h3 className="font-semibold mb-2">Projet très sérieux (ou pas)</h3>
+            <h3 className="font-semibold mb-2">Projet bénévole</h3>
             <p className="text-sm text-muted">
-              On prend l&apos;orga au sérieux, mais jamais nous-mêmes. La seule
-              chose vraiment obligatoire : rire (ou au moins sourire poli).
+              Une association loi 1901 qui soutient la création humoristique et
+              l&apos;émergence de nouveaux talents.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="container py-10 md:py-16 border-t border-zinc-800">
+      <section className="container py-10 md:py-16 border-t border-zinc-200">
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="relative h-52 w-full md:w-1/2">
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-500 via-black to-accent opacity-50 blur-2xl" />
@@ -155,22 +154,23 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="border-t border-slate-800/60 bg-slate-900/70">
-        <div className="container py-10 md:py-12 grid gap-8 md:grid-cols-[2fr,1fr] items-center">
+      <section className="border-t border-zinc-200 bg-white/80">
+        <div className="container py-10 md:py-12 grid gap-4 items-center">
           <div>
             <h2 className="text-xl font-semibold mb-2">
-              Restons en contact
+              Newsletter (quand on sera organisés)
             </h2>
-            <p className="text-sm text-muted mb-3 max-w-xl">
-              Une question, une idée de plateau, une envie de privatiser le
-              club ou juste nous dire que votre pote devrait monter sur scène ?
+            <p className="text-sm text-muted mb-2 max-w-xl">
+              Un jour, vous recevrez un mail élégant avec les prochaines dates
+              et peut‑être même une blague pas trop nulle. En attendant, suivez‑nous
+              sur les réseaux ou écrivez‑nous directement.
             </p>
-            <a
-              href="mailto:contact@biiip-comedy.club"
-              className="btn-primary text-sm"
-            >
-              Écrire à Biiip Comedy Club
-            </a>
+            <p className="text-sm">
+              👉{" "}
+              <a href="mailto:contact@biiip-comedy.club" className="underline">
+                contact@biiip-comedy.club
+              </a>
+            </p>
           </div>
         </div>
       </section>

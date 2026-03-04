@@ -8,8 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0f172a", // bleu ardoise plus clair
-        foreground: "#0b1120",
+        background: "#020617", // fond plus sombre type nuit
+        foreground: "#e5f0ff",
         primary: {
           50: "#e0f2ff",
           100: "#bae6fd",
@@ -17,9 +17,9 @@ const config: Config = {
           600: "#0ea5e9"
         },
         neonBlue: "#22d3ee",
-        accent: "#facc15", // petite touche jaune humoristique
-        muted: "#64748b",
-        card: "#e2e8f0"
+        accent: "#facc15",
+        muted: "#9ca3af",
+        card: "#02091a"
       },
       fontFamily: {
         sans: ["system-ui", "ui-sans-serif", "system-ui", "sans-serif"]

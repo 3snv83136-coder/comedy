@@ -13,7 +13,7 @@ export default function HomePage() {
   const upcoming = shows;
 
   return (
-    <div className="bg-gradient-to-b from-white via-background to-[#0f172a]">
+    <div className="bg-gradient-to-b from-black via-background to-black">
       <section className="border-b border-zinc-800">
         <div className="container py-16 md:py-24 grid gap-10 md:grid-cols-[3fr,2fr] items-center">
           <div>

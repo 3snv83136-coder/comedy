@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="fr">
       <body className="bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
-          <header className="border-b border-zinc-300 bg-white/80 backdrop-blur">
+          <header className="border-b border-zinc-800 bg-black/70 backdrop-blur">
             <div className="container flex items-center justify-between py-4">
               <Link href="/" className="flex items-center gap-3">
                 <div className="relative h-10 w-28 md:w-32">
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </header>
           <main className="flex-1">{children}</main>
-          <footer className="border-t border-zinc-200 bg-white mt-10">
+          <footer className="border-t border-zinc-800 bg-black/90 mt-10">
             <div className="container py-8 text-sm text-muted flex flex-col md:flex-row items-center justify-between gap-4">
               <p>© {new Date().getFullYear()} Biiip Comedy Club. Tous droits réservés.</p>
               <p>
